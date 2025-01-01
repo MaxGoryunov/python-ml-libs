@@ -83,8 +83,21 @@ print(f'Столбец: {source[:, np.newaxis]}')
 print(f'Строка: {source[np.newaxis, :]}')
 
 ## 10. Разберитесь, как работает метод dstack
+top = np.array([[1, 2], [3, 4]])
+bottom = np.array([[5, 6], [7, 8]])
+dstacked = np.dstack((top, bottom))
+print(f'Dstack: {dstacked}')
+print(f'Vstack: {np.vstack([top, bottom])}')
+print(f'HStack: {np.hstack([top, bottom])}')
 
 ## 11. Разберитесь, как работают методы split, vsplit, hsplit, dsplit
+source = np.array([1, 2, 3, 4, 5, 6])
+print(f'Split - разбиение массива: {np.split(source, 3)}')
+print(f'Vsplit - по строкам: {np.vsplit(np.array([[1, 2], [3, 4], [5, 6]]), 3)}')
+print(f'Hsplit - по столбцам: {np.hsplit(source, 2)}')
+x = np.arange(16.0).reshape(2, 2, 4)
+print(x)
+print(f'DSplit - в глубину: {np.dsplit(x, 2)}')
 
 ## 12. Привести пример использования всех универсальных функций, которые я привел
 
