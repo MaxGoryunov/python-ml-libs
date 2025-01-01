@@ -3,6 +3,20 @@ import array
 
 ## 1. Какие еще существуют коды типов?
 print(list(array.typecodes))
+print('b - знаковый char')
+print('B - беззнаковый char')
+print('u - символ unicode')
+print('h - знаковый short')
+print('H - беззнаковый short')
+print('i - знаковый int')
+print('I - беззнаковый int')
+print('l - знаковый long')
+print('L - беззнаковый long')
+print('f - float')
+print('d - double')
+
+
+## 2. Напишите код, подобный приведенному выше, но с другим типом
 print('Примеры:')
 b = array.array('d', [2.5, 3.2, 3.3]) # float
 print(b)
@@ -10,9 +24,6 @@ c = array.array('b', [1, 0, 1, 0]) # boolean
 print(c)
 d = array.array('u', 'hello') # unicode
 print(d)
-
-
-## 2. Напишите код, подобный приведенному выше, но с другим типом
 
 ## 3. Напишите код для создания массива с 5 значениями, располагающимися через равные интервалы в диапазоне от 0 до 1
 
