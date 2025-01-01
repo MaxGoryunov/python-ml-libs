@@ -78,6 +78,9 @@ print(origin)
 print(other)
 
 ## 9. Продемонстрируйте использование newaxis для получения вектора-столбца и вектора-строки
+source = np.array([5, 4, 3, 2, 1])
+print(f'Столбец: {source[:, np.newaxis]}')
+print(f'Строка: {source[np.newaxis, :]}')
 
 ## 10. Разберитесь, как работает метод dstack
 
