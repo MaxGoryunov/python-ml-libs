@@ -103,8 +103,24 @@ print(df.iloc[:, 0].values[:, np.newaxis])
 
 print(df - df.iloc[:, 0].values[:, np.newaxis])
 
-# print(df.iloc[0, ::2])
-
-# print(df - df.iloc[0, ::2])
 
 # 5. На примере объектов DataFrame продемонстрируйте использование методов ffill() и bfill()
+
+df = pd.DataFrame(
+    [
+        [1, 2, 3, 4, np.nan, np.nan],
+        [1, 2, 3, np.nan, 5, 6],
+        [1, np.nan, 3, np.nan, np.nan, 6],
+    ],
+)
+print(df)
+
+"""
+ffill() заполняет NA-значения предыдущим валидным значением.
+"""
+print(df.ffill())
+
+"""
+bfill() заполняет NA-значения следующим валидным значением.
+"""
+print(df.bfill())
