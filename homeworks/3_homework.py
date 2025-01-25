@@ -91,4 +91,20 @@ print(data)
 
 # 4. Переписать пример с транслирование для DataFrame так, чтобы вычитание происходило по СТОЛБЦАМ
 
+rng = np.random.default_rng(1)
+
+A = rng.integers(0, 10, (3, 4))
+print(A)
+
+df = pd.DataFrame(A, columns=['a', 'b', 'c', 'd'])
+print(df)
+
+print(df.iloc[:, 0].values[:, np.newaxis])
+
+print(df - df.iloc[:, 0].values[:, np.newaxis])
+
+# print(df.iloc[0, ::2])
+
+# print(df - df.iloc[0, ::2])
+
 # 5. На примере объектов DataFrame продемонстрируйте использование методов ffill() и bfill()
