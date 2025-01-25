@@ -17,13 +17,7 @@ print(b)
 c = pd.Series(5)
 print(c)
 
-score_dict = {
-    'a': 10,
-    'b': 20,
-    'c': 30,
-    'd': 0, 
-    'e': 60
-}
+score_dict = {"a": 10, "b": 20, "c": 30, "d": 0, "e": 60}
 d = pd.Series(score_dict)
 print(d)
 
@@ -35,6 +29,40 @@ print(d)
 # - словари объектов Series
 # - двумерный массив NumPy
 # - структурированный массив Numpy
+
+df = pd.DataFrame(pd.Series([5, 6, 7, 8]), index=["a", "b", "c", "d"])
+print(df)
+
+age_dict = {"a": 13, "b": 18, "c": 15, "d": 24}
+
+height_dict = {"a": 157, "b": 186, "c": 178, "d": 180}
+
+age = pd.Series(age_dict)
+height = pd.Series(height_dict)
+
+students = pd.DataFrame([age_dict, height_dict])
+print(students)
+
+students1 = pd.DataFrame({"age": age, "height": height})
+print(students1)
+
+df2 = pd.DataFrame(
+    np.array([
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]]
+    ),
+    columns=["a", "b", "c"]
+)
+print(df2)
+
+data = np.array(
+    [(1, 2, 3), (4, 5, 6), (7, 8, 9)],
+    dtype=[("a", "i4"), ("b", "i4"), ("c", "i4")]
+)
+df3 = pd.DataFrame(data)
+print(df3)
+
 
 # 3. Объедините два объекта Series с неодинаковыми множествами ключей (индексов) так, чтобы вместо NaN было установлено значение 1
 
