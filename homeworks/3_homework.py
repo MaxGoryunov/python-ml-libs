@@ -7,6 +7,7 @@ import pandas as pd
 # - списки Python или массивы NumPy
 # - скалярные значение
 # - словари
+print('Задание 1')
 
 a = pd.Series([1, 2, 3, 4, 5])
 print(a)
@@ -29,8 +30,8 @@ print(d)
 # - словари объектов Series
 # - двумерный массив NumPy
 # - структурированный массив Numpy
-
-df = pd.DataFrame(pd.Series([5, 6, 7, 8]), index=["a", "b", "c", "d"])
+print('Задание 2')
+df = pd.DataFrame(pd.Series([5, 6, 7, 8], index=["a", "b", "c", "d"]))
 print(df)
 
 age_dict = {"a": 13, "b": 18, "c": 15, "d": 24}
@@ -66,6 +67,7 @@ print(df3)
 
 # 3. Объедините два объекта Series с неодинаковыми множествами ключей (индексов) так, чтобы вместо NaN было установлено значение 1
 
+print('Задание 3')
 pop = pd.Series(
     {
         "city_1": 1001,
@@ -91,6 +93,7 @@ print(data)
 
 # 4. Переписать пример с транслирование для DataFrame так, чтобы вычитание происходило по СТОЛБЦАМ
 
+print('Задание 4')
 rng = np.random.default_rng(1)
 
 A = rng.integers(0, 10, (3, 4))
@@ -106,6 +109,7 @@ print(df - df.iloc[:, 0].values[:, np.newaxis])
 
 # 5. На примере объектов DataFrame продемонстрируйте использование методов ffill() и bfill()
 
+print('Задание 5')
 df = pd.DataFrame(
     [
         [1, 2, 3, 4, np.nan, np.nan],
@@ -118,9 +122,9 @@ print(df)
 """
 ffill() заполняет NA-значения предыдущим валидным значением.
 """
-print(df.ffill())
+print('ffill:\n', df.ffill())
 
 """
 bfill() заполняет NA-значения следующим валидным значением.
 """
-print(df.bfill())
+print('bfill:\n', df.bfill())
