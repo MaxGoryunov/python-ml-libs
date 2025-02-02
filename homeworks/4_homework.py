@@ -46,11 +46,33 @@ print(pop_df.loc[['city_1', 'city_3'], 'something'])
 # ???? ## pop_df_1 = pop_df.loc???[['city_1', 'city_3'], 'something']
 
 
-
 # 2. Из получившихся данных выбрать данные по 
 # - 2020 году (для всех столбцов)
 # - job_1 (для всех строк)
-# - для city_1 и job_2 
+# - для city_1 и job_2
+
+index = pd.MultiIndex.from_product(
+    [
+        ['city_1', 'city_2'],
+        [2010, 2020]
+    ],
+    names=['city', 'year']
+)
+columns = pd.MultiIndex.from_product(
+    [
+        ['person_1', 'person_2', 'person_3'],
+        ['job_1', 'job_2']
+    ],
+    names=['worker', 'job']
+)
+rng = np.random.default_rng(1)
+data = rng.random((4, 6))
+data_df = pd.DataFrame(data, index=index, columns=columns)
+print(data_df)
+
+print(data_df.loc[(slice(None), 2020), :])
+print(data_df.loc[:, (slice(None), 'job_1')])
+print(data_df.loc[('city_1',), (slice(None), 'job_2')])
 
 
 # 3. Взять за основу DataFrame со следующей структурой
