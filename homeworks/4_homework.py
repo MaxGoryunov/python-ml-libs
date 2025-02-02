@@ -114,7 +114,25 @@ print(data_df.loc['city_1', pd.IndexSlice[:, 'job_2']])
 
 #4. Привести пример использования inner и outer джойнов для Series (данные примера скорее всего нужно изменить)
 print('Задание 4')
+"""
+join='outer' объединяет с использованием всех колонок, а join='inner'
+оставляет только колонки, которые есть в обоих DataFrame
+"""
+df_1 = pd.DataFrame([
+    ['apple', 3, 'sweet'],
+    ['lemon', 2, 'sour'],
+    ['tomato', 5, 'umami']
+], columns=['food', 'amount', 'taste'])
 
+df_2 = pd.DataFrame([
+    ['apple', 2, 'small'],
+    ['watermelon', 3, 'big']
+], columns=['food', 'amount', 'size'])
+print(df_1)
+print(df_2)
+
+print(pd.concat([df_1, df_2], join='outer'))
+print(pd.concat([df_1, df_2], join='inner'))
 # ser1 = pd.Series(['a', 'b', 'c'], index=[1,2,3])
 # ser2 = pd.Series(['b', 'c', 'f'], index=[4,5,6])
 
