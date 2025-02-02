@@ -3,7 +3,7 @@ import pandas as pd
 
 
 # # 1. Разобраться как использовать мультииндексные ключи в данном примере
-
+print('Задание 1')
 index = [
     ('city_1', 2010),
     ('city_1', 2020),
@@ -50,7 +50,7 @@ print(pop_df.loc[['city_1', 'city_3'], 'something'])
 # - 2020 году (для всех столбцов)
 # - job_1 (для всех строк)
 # - для city_1 и job_2
-
+print('Задание 2')
 index = pd.MultiIndex.from_product(
     [
         ['city_1', 'city_2'],
@@ -76,30 +76,45 @@ print(data_df.loc[('city_1',), (slice(None), 'job_2')])
 
 
 # 3. Взять за основу DataFrame со следующей структурой
-# index = pd.MultiIndex.from_product(
-#     [
-#         ['city_1', 'city_2'],
-#         [2010, 2020]
-#     ],
-#     names=['city', 'year']
-# )
-# columns = pd.MultiIndex.from_product(
-#     [
-#         ['person_1', 'person_2', 'person_3'],
-#         ['job_1', 'job_2']
-#     ],
-#     names=['worker', 'job']
-# )
+print('Задание 3')
+
+index = pd.MultiIndex.from_product(
+    [
+        ['city_1', 'city_2'],
+        [2010, 2020]
+    ],
+    names=['city', 'year']
+)
+columns = pd.MultiIndex.from_product(
+    [
+        ['person_1', 'person_2', 'person_3'],
+        ['job_1', 'job_2']
+    ],
+    names=['worker', 'job']
+)
 # 
 # Выполнить запрос на получение следующих данных
 # - все данные по person_1 и person_3
 # - все данные по первому городу и первым двум person-ам (с использование срезов)
 #
 # Приведите пример (самостоятельно) с использованием pd.IndexSlice
+rng = np.random.default_rng(1)
+data = rng.random((4, 6))
+data_df = pd.DataFrame(data, index=index, columns=columns)
+print(data_df)
+
+print(data_df[['person_1', 'person_3']])
+print(data_df.loc['city_1', 'person_1':'person_2'])
+
+print('Пример pd.IndexSlice: выбор city_1 и job_2')
+print(data_df.loc['city_1', pd.IndexSlice[:, 'job_2']])
+
 
 
 
 #4. Привести пример использования inner и outer джойнов для Series (данные примера скорее всего нужно изменить)
+print('Задание 4')
+
 # ser1 = pd.Series(['a', 'b', 'c'], index=[1,2,3])
 # ser2 = pd.Series(['b', 'c', 'f'], index=[4,5,6])
 
