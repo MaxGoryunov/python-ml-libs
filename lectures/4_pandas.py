@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 
 
-# `index = [
+# index = [
 #     ('city_1', 2010),
 #     ('city_1', 2020),
 #     ('city_2', 2010),
