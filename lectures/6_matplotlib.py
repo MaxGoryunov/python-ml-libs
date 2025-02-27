@@ -161,6 +161,8 @@ fig = plt.figure()
 # ax1.plot(np.sin(x))
 # ax2.plot(np.cos(x))
 
+# Простые сетки
+
 fig.subplots_adjust(hspace=0.4, wspace=0.4)
 
 for i in range(1, 7):
