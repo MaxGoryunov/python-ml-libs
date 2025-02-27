@@ -5,6 +5,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 
+# TODO add ticks to plots
+
 print('Задание 1')
 
 x = np.array([1, 5, 10, 15, 20])
@@ -18,3 +20,20 @@ plt.legend()
 plt.show()
 
 
+print('Задание 2')
+
+grid = plt.GridSpec(2, 2)
+ax = plt.subplot(grid[0, :])
+x = np.arange(1, 6)
+y = np.array([1, 7, 6, 3, 5])
+ax.plot(x, y)
+
+ax = plt.subplot(grid[1, 0])
+y = np.array([9, 4, 2, 4, 9])
+ax.plot(x, y)
+
+ax = plt.subplot(grid[1, 1])
+y = np.array([-7, -4, 2, -4, -7])
+ax.plot(x, y)
+
+plt.show()
