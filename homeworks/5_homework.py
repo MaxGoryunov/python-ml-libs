@@ -67,12 +67,36 @@ print('Задание 4')
 
 # plt.show()
 
-print('Задание 5')
 
-x = np.linspace(0, 5, 100)
-y = np.cos(np.pi * x)
+# print('Задание 5')
 
-plt.plot(x, y, 'r')
-plt.fill_between(x, y, 0, color='blue', alpha=0.6)
+# x = np.linspace(0, 5, 100)
+# y = np.cos(np.pi * x)
 
+# plt.plot(x, y, 'r')
+# plt.fill_between(x, y, 0, color='blue', alpha=0.6)
+
+# plt.show()
+
+
+print('Задание 6')
+
+# x = np.linspace(0, 5, 100)
+# y = np.cos(np.pi * x)
+
+print('Задание 7')
+
+x = np.arange(7)
+y = np.arange(7)
+fig, axes = plt.subplots(1, 3, figsize=(12, 4))
+styles = ['pre', 'mid', 'post']
+
+for ax, style in zip(axes, styles):
+    ax.step(x, y, where=style, color='green', marker='o')
+    ax.grid(True)
+    ax.set_xticks(np.arange(7))
+    ax.set_yticks(np.arange(7))
+    ax.axis('equal')
+
+plt.tight_layout()
 plt.show()
