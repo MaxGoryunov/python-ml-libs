@@ -41,10 +41,28 @@ print('Задание 2')
 
 print('Задание 3')
 
-x = np.arange(-5, 6)
-y = x ** 2
-plt.plot(x, y)
-plt.annotate('min', xy=(0, 0), xytext=(0, 10),
-             arrowprops=dict(facecolor='green'))
+# x = np.arange(-5, 6)
+# y = x ** 2
+# plt.plot(x, y)
+# plt.annotate('min', xy=(0, 0), xytext=(0, 10),
+#              arrowprops=dict(facecolor='green'))
+
+# plt.show()
+
+
+print('Задание 4')
+
+x = np.random.uniform(0, 7, 700)
+y = np.random.normal(0, 7, 700)
+
+fig, ax = plt.subplots()
+bins = np.arange(0, 8, 1)
+h = ax.hist2d(x, y, bins=[bins, bins], cmap='viridis', vmin=0, vmax=10)
+
+ax.set_xlim(0, 7)
+ax.set_ylim(0, 7)
+ax.set_xticks(np.arange(0, 8, 1))
+ax.set_yticks(np.arange(0, 8, 1))
+fig.colorbar(h[3], ax=ax, shrink=0.5, anchor=(0, 0), aspect=5)
 
 plt.show()
