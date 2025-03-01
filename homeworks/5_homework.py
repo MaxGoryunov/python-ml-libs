@@ -86,17 +86,33 @@ print('Задание 6')
 
 print('Задание 7')
 
-x = np.arange(7)
-y = np.arange(7)
-fig, axes = plt.subplots(1, 3, figsize=(12, 4))
-styles = ['pre', 'mid', 'post']
+# x = np.arange(7)
+# y = np.arange(7)
+# fig, axes = plt.subplots(1, 3, figsize=(12, 4))
+# styles = ['pre', 'mid', 'post']
 
-for ax, style in zip(axes, styles):
-    ax.step(x, y, where=style, color='green', marker='o')
-    ax.grid(True)
-    ax.set_xticks(np.arange(7))
-    ax.set_yticks(np.arange(7))
-    ax.axis('equal')
+# for ax, style in zip(axes, styles):
+#     ax.step(x, y, where=style, color='green', marker='o')
+#     ax.grid(True)
+#     ax.set_xticks(np.arange(7))
+#     ax.set_yticks(np.arange(7))
+#     ax.axis('equal')
 
-plt.tight_layout()
+# plt.tight_layout()
+# plt.show()
+
+
+print('Задание 8')
+
+x = np.linspace(0, 10, 100)
+y1 = -0.2 * (x ** 2) + 2 * x
+y2 = -0.6 * (x ** 2) + 6 * x
+y3 = -4.0 / 7 * (x ** 2) + 8 * x
+
+plt.fill_between(x, y1, 0, color='blue', label='y1')
+plt.fill_between(x, y2, y1, color='orange', label='y2')
+plt.fill_between(x, y3, y2, color='green', label='y3')
+plt.ylim(0, 29)
+plt.legend()
+
 plt.show()
