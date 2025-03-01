@@ -36,19 +36,21 @@ x3 = rng.normal(3, 2, 1000)
 
 # # Двумерные гистограммы
 
-# mean = [0, 0]
-# cov = [[1, 1], [1, 2]]
+mean = [0, 0]
+cov = [[1, 1], [1, 2]]
 
-# x, y = rng.multivariate_normal(mean, cov, 10000).T
-
-# # plt.hist2d(x, y, bins=30)
+x, y = rng.multivariate_normal(mean, cov, 10000).T
+print(x.shape, y.shape)
+plt.hist2d(x, y, bins=30)
 # plt.hexbin(x, y, gridsize=30)
-# cb = plt.colorbar()
+cb = plt.colorbar()
 
-# cb.set_label('Point in interval')
+cb.set_label('Point in interval')
 
 # print(np.histogram2d(x, y, bins=1))
 # print(np.histogram2d(x, y, bins=10))
+
+plt.show()
 
 
 # Легенды
@@ -125,7 +127,8 @@ y = np.sin(x) * np.cos(x[:, np.newaxis])
 
 # 1
 # plt.imshow(y, cmap='Binary')
-# plt.imshow(y, cmap='viridis')
+plt.imshow(y, cmap='viridis')
+plt.show()
 
 # 2
 # plt.imshow(y, cmap='RdBu')
