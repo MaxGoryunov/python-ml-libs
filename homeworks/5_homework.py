@@ -52,17 +52,27 @@ print('Задание 3')
 
 print('Задание 4')
 
-x = np.random.uniform(0, 7, 700)
-y = np.random.normal(0, 7, 700)
+# x = np.random.uniform(0, 7, 700)
+# y = np.random.normal(0, 7, 700)
 
-fig, ax = plt.subplots()
-bins = np.arange(0, 8, 1)
-h = ax.hist2d(x, y, bins=[bins, bins], cmap='viridis', vmin=0, vmax=10)
+# fig, ax = plt.subplots()
+# bins = np.arange(0, 8, 1)
+# h = ax.hist2d(x, y, bins=[bins, bins], cmap='viridis', vmin=0, vmax=10)
 
-ax.set_xlim(0, 7)
-ax.set_ylim(0, 7)
-ax.set_xticks(np.arange(0, 8, 1))
-ax.set_yticks(np.arange(0, 8, 1))
-fig.colorbar(h[3], ax=ax, shrink=0.5, anchor=(0, 0), aspect=5)
+# ax.set_xlim(0, 7)
+# ax.set_ylim(0, 7)
+# ax.set_xticks(np.arange(0, 8, 1))
+# ax.set_yticks(np.arange(0, 8, 1))
+# fig.colorbar(h[3], ax=ax, shrink=0.5, anchor=(0, 0), aspect=5)
+
+# plt.show()
+
+print('Задание 5')
+
+x = np.linspace(0, 5, 100)
+y = np.cos(np.pi * x)
+
+plt.plot(x, y, 'r')
+plt.fill_between(x, y, 0, color='blue', alpha=0.6)
 
 plt.show()
