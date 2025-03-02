@@ -104,15 +104,35 @@ print('Задание 7')
 
 print('Задание 8')
 
-x = np.linspace(0, 10, 100)
-y1 = -0.2 * (x ** 2) + 2 * x
-y2 = -0.6 * (x ** 2) + 6 * x
-y3 = -4.0 / 7 * (x ** 2) + 8 * x
+# x = np.linspace(0, 10, 100)
+# y1 = -0.2 * (x ** 2) + 2 * x
+# y2 = -0.6 * (x ** 2) + 6 * x
+# y3 = -4.0 / 7 * (x ** 2) + 8 * x
 
-plt.fill_between(x, y1, 0, color='blue', label='y1')
-plt.fill_between(x, y2, y1, color='orange', label='y2')
-plt.fill_between(x, y3, y2, color='green', label='y3')
-plt.ylim(0, 29)
-plt.legend()
+# plt.fill_between(x, y1, 0, color='blue', label='y1')
+# plt.fill_between(x, y2, y1, color='orange', label='y2')
+# plt.fill_between(x, y3, y2, color='green', label='y3')
+# plt.ylim(0, 29)
+# plt.legend()
 
+# plt.show()
+
+
+print('Задание 9')
+
+values = [15, 20, 25, 10, 30]  # Example values for the pie chart
+labels = ['BMW', 'Toyota', 'Ford', 'AUDI', 'Jaguar']
+
+explode = [0] * len(labels)  # No explosion for most slices
+explode[labels.index('BMW')] = 0.1  # Shift out the BMW slice
+
+plt.figure()
+plt.pie(
+    values, 
+    labels=labels, 
+    startangle=90, 
+    explode=explode,
+)
+
+plt.tight_layout()
 plt.show()
