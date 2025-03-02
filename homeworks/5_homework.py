@@ -81,8 +81,16 @@ print('Задание 4')
 
 print('Задание 6')
 
-# x = np.linspace(0, 5, 100)
-# y = np.cos(np.pi * x)
+x = np.linspace(0, 5, 1000)
+y = np.cos(np.pi * x)
+
+mask = y < -0.5
+y[mask] = np.nan
+
+plt.plot(x, y, linewidth=4.0)
+plt.ylim(-1, 1)
+
+plt.show()
 
 print('Задание 7')
 
