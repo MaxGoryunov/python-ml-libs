@@ -126,13 +126,26 @@ labels = ['BMW', 'Toyota', 'Ford', 'AUDI', 'Jaguar']
 explode = [0] * len(labels)  # No explosion for most slices
 explode[labels.index('BMW')] = 0.1  # Shift out the BMW slice
 
-plt.figure()
-plt.pie(
-    values, 
-    labels=labels, 
-    startangle=90, 
-    explode=explode,
-)
+# plt.figure()
+# plt.pie(
+#     values, 
+#     labels=labels, 
+#     startangle=90, 
+#     explode=explode,
+# )
 
-plt.tight_layout()
-plt.show()
+# plt.tight_layout()
+# plt.show()
+
+
+print('Задание 10')
+
+# plt.figure()
+# plt.pie(
+#     values, 
+#     labels=labels, 
+#     wedgeprops={'width': 0.5}
+# )
+
+# plt.tight_layout()
+# plt.show()
