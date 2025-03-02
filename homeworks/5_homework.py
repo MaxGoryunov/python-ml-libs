@@ -120,22 +120,21 @@ print('Задание 8')
 
 print('Задание 9')
 
-values = [15, 20, 25, 10, 30]  # Example values for the pie chart
+values = [15, 20, 25, 10, 30]
 labels = ['BMW', 'Toyota', 'Ford', 'AUDI', 'Jaguar']
 
-explode = [0] * len(labels)  # No explosion for most slices
-explode[labels.index('BMW')] = 0.1  # Shift out the BMW slice
+explode = [0] * len(labels)
+explode[labels.index('BMW')] = 0.2
 
-# plt.figure()
-# plt.pie(
-#     values, 
-#     labels=labels, 
-#     startangle=90, 
-#     explode=explode,
-# )
+plt.figure()
+plt.pie(
+    values,
+    labels=labels,
+    explode=explode
+)
 
-# plt.tight_layout()
-# plt.show()
+plt.tight_layout()
+plt.show()
 
 
 print('Задание 10')
