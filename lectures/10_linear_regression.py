@@ -152,18 +152,18 @@ x = data[:, 0]
 y = data[:, 1]
 n = len(x)
 
-# w1 = 0.0
-# w0 = 0.0
+w1 = 0.0
+w0 = 0.0
 
-# L = 0.001
-# iterations = 100_000
-# for i in range(iterations):
-#     D_w0 = 2 * sum(y[i] - w0 - w1 * x[i] for i in range(n))
-#     D_w1 = 2 * sum(x[i] * (-y[i] - w0 - w1 * x) for i in range(n))
-#     w1 -= L * D_w1
-#     w0 -= L * D_w0
+L = 0.001
+iterations = 100_000
+for i in range(iterations):
+    D_w0 = 2 * sum(-y[i] + w0 + w1 * x[i] for i in range(n))
+    D_w1 = 2 * sum(x[i] * (-y[i] + w0 + w1 * x[i]) for i in range(n))
+    w1 -= L * D_w1
+    w0 -= L * D_w0
 
-# print(w1, w0)
+print(w1, w0)
 
 w1 = np.linspace(-10, 10, 100)
 w0 = np.linspace(-10, 10, 100)
