@@ -8,6 +8,12 @@ __pycache__/
 
 .vscode
 
+test/
+lectures/data/train
+lectures/data/train_data
+lectures/data/val_data
+lectures/train
+
 # Distribution / packaging
 .Python
 build/
