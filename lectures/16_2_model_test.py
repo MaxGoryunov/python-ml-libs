@@ -2,6 +2,7 @@ import os
 
 from keras.models import load_model
 from tensorflow.keras.preprocessing import image
+import matplotlib.pyplot as plt
 
 model = load_model('./lectures/data/model.h5')
 
@@ -26,3 +27,6 @@ prediction = model.predict(img_processed)
 print(prediction)
 
 # from tensorflow.keras.applications.resnet50 import ResNet50, decode_predictions
+
+# plt.imshow(img)
+# plt.show()
